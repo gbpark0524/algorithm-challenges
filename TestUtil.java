@@ -1,5 +1,3 @@
-package programmers;
-
 public class TestUtil {
     private static int testCount = 0;
  
