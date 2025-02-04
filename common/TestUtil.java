@@ -1,3 +1,5 @@
+package common;
+
 public class TestUtil {
     private static int testCount = 0;
  
