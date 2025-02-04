@@ -1,4 +1,4 @@
-import java.util.*;
+import programmers.TestUtil;
 
 /*
 문제 설명
@@ -21,9 +21,30 @@ s	answer
 
 class ValidBrackets {
     boolean solution(String s) {
-        boolean answer = true;
-        System.out.println("Hello Java");
+        int stack = 0;
 
-        return answer;
+        for (int i = 0; i < s.length(); i++) {
+            stack += s.charAt(i) == '(' ? 1 : -1;
+            if (stack < 0) return false;
+        }
+
+        return stack == 0;
+    }
+
+    public static void main(String[] args) {
+        ValidBrackets vBrackets = new ValidBrackets();
+    
+        boolean sol1 = vBrackets.solution("()()"    );
+        boolean sol2 = vBrackets.solution("(())()"  );
+        boolean sol3 = vBrackets.solution(")()("    );
+        boolean sol4 = vBrackets.solution("(()("    );
+
+        TestUtil.test(true, sol1);
+        TestUtil.test(true, sol2);
+        TestUtil.test(false, sol3);
+        TestUtil.test(false, sol4);
     }
 }
+
+// 짝을 맞춰서 스택으로 풀면 된다. 스택에 들어갈 스트링이 정해져 있으므로 그냥 카운트로 구현함
+// 체감상 난이도 1
