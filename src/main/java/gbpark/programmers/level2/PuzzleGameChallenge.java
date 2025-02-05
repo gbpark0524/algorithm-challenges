@@ -1,4 +1,5 @@
-import java.util.*;
+package gbpark.programmers.level2;
+
 import common.TestUtil;
 
 /* 
