@@ -1,6 +1,6 @@
 package gbpark.programmers.level2;
 
-import common.TestUtil;
+import gbpark.common.TestUtil;
 
 import java.util.Arrays;
 
@@ -72,7 +72,6 @@ class PuzzleGameChallenge {
 
     public long calcTime(int[] diffs, int[] times, int level) {
         long result  = times[0];
-        System.out.println("level:" + level + "/" + Arrays.toString(diffs));
 
         for (int i = 1; i < diffs.length; i++) {
             result += times[i];
@@ -81,7 +80,6 @@ class PuzzleGameChallenge {
                 result += (long) (times[i-1] + times[i]) * (diffs[i] - level);
             }
         }
-        System.out.println("result:" + result);
         return result;
     }
 

@@ -1,6 +1,6 @@
 package gbpark.programmers.level2;
 
-import common.TestUtil;
+import gbpark.common.TestUtil;
 
 /*
 문제 설명

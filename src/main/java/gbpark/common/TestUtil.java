@@ -1,4 +1,4 @@
-package common;
+package gbpark.common;
 
 public class TestUtil {
     private static int testCount = 0;
@@ -10,6 +10,8 @@ public class TestUtil {
             System.err.println("Expected: " + expected);
             System.err.println("Actual  : " + actual);
             System.err.println();
+        } else {
+            System.err.println("🎉Test Case #" + testCount + " SUCCESS 🎊");
         }
     }
  }
