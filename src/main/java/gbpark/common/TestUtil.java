@@ -1,4 +1,4 @@
-package common;
+package gbpark.common;
 
 public class TestUtil {
     private static int testCount = 0;

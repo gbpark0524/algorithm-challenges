@@ -1,6 +1,6 @@
 package gbpark.programmers.level2;
 
-import common.TestUtil;
+import gbpark.common.TestUtil;
 
 import java.util.Arrays;
 
