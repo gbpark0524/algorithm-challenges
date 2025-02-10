@@ -1,18 +1,8 @@
 package gbpark.programmers.level2;
 
 import gbpark.common.TestUtil;
-import org.w3c.dom.ranges.Range;
 
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.OptionalInt;
-import java.util.Queue;
-import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
+import java.util.*;
 
 /*
 [본 문제는 정확성과 효율성 테스트 각각 점수가 있는 문제입니다.]

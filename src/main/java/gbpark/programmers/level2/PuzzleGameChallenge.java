@@ -2,8 +2,6 @@ package gbpark.programmers.level2;
 
 import gbpark.common.TestUtil;
 
-import java.util.Arrays;
-
 /* 
  당신은 순서대로 n개의 퍼즐을 제한 시간 내에 풀어야 하는 퍼즐 게임을 하고 있습니다. 각 퍼즐은 난이도와 소요 시간이 정해져 있습니다.
  당신의 숙련도에 따라 퍼즐을 풀 때 틀리는 횟수가 바뀌게 됩니다.
