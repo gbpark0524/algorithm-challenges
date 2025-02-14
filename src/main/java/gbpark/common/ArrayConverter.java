@@ -5,6 +5,7 @@ import java.util.Arrays;
 public class ArrayConverter {
 
     public static String[] toStringArray(String input) {
+        input = input.trim();
         return input.replaceAll("[\\[\\]]", "")
                 .split("\\s*,\\s*");
     }
@@ -19,6 +20,7 @@ public class ArrayConverter {
     }
 
     public static char[] toCharArray(String input) {
+        input = input.trim();
         return input.replaceAll("[\\[\\]\\s,\"]", "")
                 .trim()
                 .toCharArray();
@@ -37,6 +39,7 @@ public class ArrayConverter {
     }
 
     public static int[] toIntArray(String input) {
+        input = input.trim();
         String[] numbers = input.replaceAll("[\\[\\]]", "")
                 .trim()
                 .split("\\s*,\\s*");
@@ -62,7 +65,8 @@ public class ArrayConverter {
     }
 
     private static String[] getRows(String input) {
-        String content = input.substring(1, input.length() - 1).trim();
+        input = input.trim();
+        String content = input.trim().substring(1, input.length() - 1);
         String[] rows = content.split("\\]\\s*,\\s*\\[");
         rows[0] = rows[0].replaceAll("^\\[", "");
         rows[rows.length - 1] = rows[rows.length - 1].replaceAll("\\]$", "");

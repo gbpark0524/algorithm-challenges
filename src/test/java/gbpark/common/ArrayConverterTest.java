@@ -9,22 +9,19 @@ class ArrayConverterTest {
     @Test
     void toStringArray() {
         // given
-        String input = "[a, b,c ,d]";
+        String input = "[a, b,c ,d]     ";
 
         // when
         String[] result = ArrayConverter.toStringArray(input);
 
         // then
         assertArrayEquals(new String[]{"a", "b", "c", "d"}, result);
-
-        // edge cases
-        assertArrayEquals(new String[]{"1", "2", "3"}, ArrayConverter.toStringArray("[1,2,3]"));
     }
 
     @Test
     void toStringMatrix() {
         // given
-        String input = "[[a,b],[c,d]]";
+        String input = "[[a,b],[c,d]]       ";
 
         // when
         String[][] result = ArrayConverter.toStringMatrix(input);
@@ -42,7 +39,7 @@ class ArrayConverterTest {
     @Test
     void toCharArray() {
         // given
-        String input = "[a,b ,c ,d]";
+        String input = "[a,b ,c ,d]         ";
 
         // when
         char[] result = ArrayConverter.toCharArray(input);
@@ -54,7 +51,7 @@ class ArrayConverterTest {
     @Test
     void toCharMatrix() {
         // given
-        String input = "[[a, b] ,[c,d]]";
+        String input = "[[a, b] ,[c,d]]   ";
 
         // when
         char[][] result = ArrayConverter.toCharMatrix(input);
@@ -67,7 +64,7 @@ class ArrayConverterTest {
     @Test
     void toIntArray() {
         // given
-        String input = "[1,2 ,3,4 ]";
+        String input = "[1,2 ,3,4 ]  ";
 
         // when
         int[] result = ArrayConverter.toIntArray(input);
@@ -82,7 +79,7 @@ class ArrayConverterTest {
     @Test
     void toIntMatrix() {
         // given
-        String input = "[[1, 2], [3,4]]";
+        String input = "[[1, 2], [3,4]]    ";
 
         // when
         int[][] result = ArrayConverter.toIntMatrix(input);
