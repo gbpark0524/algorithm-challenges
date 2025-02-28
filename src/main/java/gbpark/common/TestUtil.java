@@ -5,6 +5,7 @@ import java.util.Collection;
 
 public class TestUtil {
     private static int testCount = 0;
+    private static long startTime = 0;
 
     public static void test(Object expected, Object actual) {
         testCount++;
@@ -16,7 +17,36 @@ public class TestUtil {
             System.err.println("Actual  : " + toString(actual));
             System.err.println();
         } else {
-            System.err.println("🎉Test Case #" + testCount + " SUCCESS 🎊");
+            String time = startTime != 0 ? " :" + getTime() : "";
+            System.err.println("🎉Test Case #" + testCount + " SUCCESS 🎊 " + time);
+        }
+    }
+
+    public static void startTimer() {
+        startTime = System.nanoTime();
+    }
+
+    private static String getTime() {
+        if (startTime == 0) {
+            System.err.println("⚠️ Timer was not started.");
+            return"";
+        }
+
+        long endTime = System.nanoTime();
+        long duration = endTime - startTime;
+        startTime = 0;
+        return "⏱️ Execution time: " + formatTime(duration);
+    }
+
+    private static String formatTime(long nanos) {
+        if (nanos < 1_000) {
+            return nanos + " ns";
+        } else if (nanos < 1_000_000) {
+            return String.format("%.2f μs", nanos / 1_000.0);
+        } else if (nanos < 1_000_000_000) {
+            return String.format("%.2f ms", nanos / 1_000_000.0);
+        } else {
+            return String.format("%.2f s", nanos / 1_000_000_000.0);
         }
     }
 

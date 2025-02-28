@@ -25,6 +25,7 @@ public class MovingCart {
 
 
 		for (int i = 0; i < an.size(); i++) {
+			TestUtil.startTimer();
 			TestUtil.test(an.get(i), mc.solution(qu.get(i)));
 		}
 	}
