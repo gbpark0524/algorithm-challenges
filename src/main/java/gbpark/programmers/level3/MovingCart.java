@@ -79,14 +79,14 @@ public class MovingCart {
 
 		while (!que.isEmpty()) {
 			Object[] cur = que.poll();
-			answer = dfs((Node) cur[0], (Node) cur[1], (int) cur[2], que);
+			answer = bfs((Node) cur[0], (Node) cur[1], (int) cur[2], que);
 			if (answer != 0) break;
 		}
 
 		return answer;
 	}
 
-	int dfs(Node red, Node blue, int turn, Queue<Object[]> que) {
+	int bfs(Node red, Node blue, int turn, Queue<Object[]> que) {
 		int xR = red.x;
 		int yR = red.y;
 		int xB = blue.x;

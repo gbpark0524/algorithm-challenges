@@ -47,13 +47,7 @@ public class MinimizingRevenueDecline {
 			}
 		}
 
-		Stack<Integer> stack = new Stack<>();
-		stack.push(0);
-
-		if (!stack.isEmpty()) {
-			Integer cur = stack.pop();
-			dfs(cur, dp, tree, sales);
-		}
+		dfs(0, dp, tree, sales);
 
 		int[] answer = dp[0];
 		return Math.min(answer[0], answer[1]);
