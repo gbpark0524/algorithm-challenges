@@ -20,6 +20,7 @@
 |-----------------------------------------------------------------------------|-------------|-------------------------------------------------------------------------|-----------|
 | [수식 복원하기](https://school.programmers.co.kr/learn/courses/30/lessons/340210) | 수학, 구현      | [코드](./src/main/java/gbpark/programmers/level3/MathReconstruction.java) | PCCP 기출문제 |
 | [수레 움직이기](https://school.programmers.co.kr/learn/courses/30/lessons/250134) | BFS, 그래프 탐색 | [코드](./src/main/java/gbpark/programmers/level3/MovingCart.java)         | PCCP 기출문제 |
+| [네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162)    | DFS, 완전 탐색  | [코드](./src/main/java/gbpark/programmers/level3/Network.java)            | |
 
 ### Level 4
 
