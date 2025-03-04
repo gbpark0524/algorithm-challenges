@@ -1,5 +1,15 @@
 # 🎯 Algorithm Study
 
+<!-- TOC -->
+* [🎯 Algorithm Study](#-algorithm-study)
+  * [📚 문제](#-문제)
+    * [Level 2](#level-2)
+    * [Level 3](#level-3)
+    * [Level 4](#level-4-)
+  * [🛠 공통 유틸리티](#-공통-유틸리티)
+    * [🏭️ ArrayConverter](#-arrayconverter)
+<!-- TOC -->
+
 ## 📚 문제
 
 ### Level 2
@@ -23,7 +33,7 @@
 | [네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162)     | DFS, 완전 탐색  | [코드](./src/main/java/gbpark/programmers/level3/Network.java)            | |
 | [단어변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163)     | BFS, 그래프 탐색 | [코드](./src/main/java/gbpark/programmers/level3/WordConversion.java)     | |
 
-### Level 4
+### Level 4 
 
 | 문제                                                                           | 핵심 개념   | 풀이 코드                                                                         | 기출                           |
 |------------------------------------------------------------------------------|---------|-------------------------------------------------------------------------------|------------------------------|
@@ -34,7 +44,7 @@
 - [TestUtil](./src/main/java/gbpark/common/TestUtil.java): 테스트 케이스 실행 및 결과 검증
 - [ArrayConverter](./src/main/java/gbpark/common/ArrayConverter.java): 문자열 입력을 다양한 배열 형태로 변환
 
-### 🛠️ ArrayConverter
+### 🏭️ ArrayConverter
 
 | 메소드              | 설명                                                                                            |
 |------------------|-----------------------------------------------------------------------------------------------|
@@ -44,3 +54,5 @@
 | `toCharMatrix`   | 2차원 문자 배열 형태의 문자열을 char[][] 배열로 변환합니다.                                                        |
 | `toIntArray`     | "[1, 2, 3, 4]" 형태의 문자열을 int[] 배열로 변환합니다.                                                      |
 | `toIntMatrix`    | "[[1, 2], [3, 4]]" 형태의 2차원 정수 배열 문자열을 int[][] 배열로 변환합니다.                                      | |
+
+[⬆️Top](#-algorithm-study)
