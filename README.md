@@ -12,7 +12,7 @@
 | [퍼즐 게임 챌린지](https://school.programmers.co.kr/learn/courses/30/lessons/340212) | 이진 탐색       | [코드](./src/main/java/gbpark/programmers/level2/PuzzleGameChallenge.java) | PCCP 기출문제 |
 | [올바른 괄호](https://school.programmers.co.kr/learn/courses/30/lessons/12909)     | 스택          | [코드](./src/main/java/gbpark/programmers/level2/ValidBrackets.java)       |
 | [타겟 넘버](https://school.programmers.co.kr/learn/courses/30/lessons/43165)      | DFS, 완전탐색   | [코드](./src/main/java/gbpark/programmers/level2/TargetNumber.java)        |
-| [게임 맵 최단거리](https://school.programmers.co.kr/learn/courses/30/lessons/1844)   | BFS, 완전탐색   | [코드](./src/main/java/gbpark/programmers/level2/ShortestGameMapPath.java) |
+| [게임 맵 최단거리](https://school.programmers.co.kr/learn/courses/30/lessons/1844)   | BFS, 그래프 탐색 | [코드](./src/main/java/gbpark/programmers/level2/ShortestGameMapPath.java) |
 
 ### Level 3
 
@@ -20,7 +20,8 @@
 |-----------------------------------------------------------------------------|-------------|-------------------------------------------------------------------------|-----------|
 | [수식 복원하기](https://school.programmers.co.kr/learn/courses/30/lessons/340210) | 수학, 구현      | [코드](./src/main/java/gbpark/programmers/level3/MathReconstruction.java) | PCCP 기출문제 |
 | [수레 움직이기](https://school.programmers.co.kr/learn/courses/30/lessons/250134) | BFS, 그래프 탐색 | [코드](./src/main/java/gbpark/programmers/level3/MovingCart.java)         | PCCP 기출문제 |
-| [네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162)    | DFS, 완전 탐색  | [코드](./src/main/java/gbpark/programmers/level3/Network.java)            | |
+| [네트워크](https://school.programmers.co.kr/learn/courses/30/lessons/43162)     | DFS, 완전 탐색  | [코드](./src/main/java/gbpark/programmers/level3/Network.java)            | |
+| [단어변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163)     | BFS, 그래프 탐색 | [코드](./src/main/java/gbpark/programmers/level3/WordConversion.java)     | |
 
 ### Level 4
 
