@@ -1,6 +1,5 @@
 package gbpark.common;
 
-import java.util.Arrays;
 import java.util.Collection;
 
 public class TestUtil {
@@ -9,6 +8,7 @@ public class TestUtil {
 
     public static void test(Object expected, Object actual) {
         testCount++;
+        String time = startTime != 0 ? " :" + getTime() : "";
         boolean isEqual = isEqual(expected, actual);
 
         if (!isEqual) {
@@ -17,7 +17,6 @@ public class TestUtil {
             System.err.println("Actual  : " + toString(actual));
             System.err.println();
         } else {
-            String time = startTime != 0 ? " :" + getTime() : "";
             System.err.println("🎉Test Case #" + testCount + " SUCCESS 🎊 " + time);
         }
     }
@@ -29,13 +28,13 @@ public class TestUtil {
     private static String getTime() {
         if (startTime == 0) {
             System.err.println("⚠️ Timer was not started.");
-            return"";
+            return "";
         }
 
         long endTime = System.nanoTime();
         long duration = endTime - startTime;
         startTime = 0;
-        return "⏱️ Execution time: " + formatTime(duration);
+        return " ⏱️" + formatTime(duration);
     }
 
     private static String formatTime(long nanos) {
@@ -51,22 +50,60 @@ public class TestUtil {
     }
 
     private static boolean isEqual(Object expected, Object actual) {
-        boolean isEqual;
+        if (expected == actual) return true;
+        if (expected == null || actual == null) return false;
 
         if (expected instanceof Collection<?> expectedCol && actual instanceof Collection<?> actualCol) {
-            isEqual = expectedCol.size() == actualCol.size() && expectedCol.containsAll(actualCol);
-        } else if (expected instanceof Object[] && actual instanceof Object[]) {
-            isEqual = Arrays.equals((Object[]) expected, (Object[]) actual);
+            return expectedCol.size() == actualCol.size() && expectedCol.containsAll(actualCol);
+        } else if (expected.getClass().isArray() && actual.getClass().isArray()) {
+            int expectedLength = java.lang.reflect.Array.getLength(expected);
+            int actualLength = java.lang.reflect.Array.getLength(actual);
+
+            if (expectedLength != actualLength) return false;
+
+            for (int i = 0; i < expectedLength; i++) {
+                Object expectedElement = java.lang.reflect.Array.get(expected, i);
+                Object actualElement = java.lang.reflect.Array.get(actual, i);
+
+                if (expectedElement == null && actualElement == null) {
+                    continue;
+                }
+                if (expectedElement == null || actualElement == null) {
+                    return false;
+                }
+
+                String expectedStr = String.valueOf(expectedElement);
+                String actualStr = String.valueOf(actualElement);
+
+                if (!expectedStr.equals(actualStr)) {
+                    return false;
+                }
+            }
+
+            return true;
         } else {
-            isEqual = expected.equals(actual);
+            return expected.equals(actual);
         }
-        return isEqual;
     }
 
     private static String toString(Object obj) {
-        if (obj instanceof Object[]) {
-            return Arrays.toString((Object[]) obj);
+        if (obj.getClass().isArray()) {
+            int length = java.lang.reflect.Array.getLength(obj);
+            if (length == 0) {
+                return "[]";
+            }
+
+            StringBuilder sb = new StringBuilder("[");
+            for (int i = 0; i < length; i++) {
+                sb.append(java.lang.reflect.Array.get(obj, i));
+                if (i < length - 1) {
+                    sb.append(", ");
+                }
+            }
+            sb.append("]");
+            return sb.toString();
         }
+
         return obj.toString();
     }
 }
