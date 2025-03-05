@@ -87,6 +87,7 @@ public class TestUtil {
     }
 
     private static String toString(Object obj) {
+        if (obj == null) return "null";
         if (obj.getClass().isArray()) {
             int length = java.lang.reflect.Array.getLength(obj);
             if (length == 0) {
