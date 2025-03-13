@@ -5,6 +5,7 @@ import gbpark.common.TestUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.PriorityQueue;
 
 public class TaxiCostSharing {
 	public static void main(String[] args) {
@@ -55,22 +56,74 @@ public class TaxiCostSharing {
 			costGraph[fare[0] - 1][fare[1] - 1] = fare[2];
 			costGraph[fare[1] - 1][fare[0] - 1] = fare[2];
 		}
-		
-		for (int k = 0; k < n; k++) {
-			for (int i = 0; i < n; i++) {
-				for (int j = 0; j < n; j++) {
-					costGraph[i][j] = Math.min(costGraph[i][j], costGraph[i][k] + costGraph[k][j]);
-				}
-			}
-		}
+
+//		플로이드 워셜	
+//		for (int k = 0; k < n; k++) {
+//			for (int i = 0; i < n; i++) {
+//				for (int j = 0; j < n; j++) {
+//					costGraph[i][j] = Math.min(costGraph[i][j], costGraph[i][k] + costGraph[k][j]);
+//				}
+//			}
+//		}
+
+		int[] sd = dijkstra(s, n, costGraph);
+		int[] ad = dijkstra(a, n, costGraph);
+		int[] bd = dijkstra(b, n, costGraph);
 
 		int ans = Integer.MAX_VALUE;
 		for (int i = 0; i < n; i++) {
-			int cost = costGraph[s - 1][i] + costGraph[i][a - 1] + costGraph[i][b - 1];
+			int cost = sd[i] + ad[i] + bd[i];
 			ans = Math.min(ans, cost);
 		}
 
 		return ans;
+	}
+
+	private int[] dijkstra (int s, int n, int[][]costGraph) {
+		boolean[] visited = new boolean[n];
+		PriorityQueue<Node> pq = new PriorityQueue<>();
+		for (int i = 1; i <= n; i++) {
+			if (s==i)continue;
+			pq.add(new Node(i, costGraph[s - 1][i - 1]));
+		}
+
+		int[] dist = new int[n];
+		System.arraycopy(costGraph[s - 1], 0, dist, 0, n);
+		visited[s-1] = true;
+
+		while (!pq.isEmpty()) {
+			Node node = pq.poll();
+			int target = node.target;
+			if (visited[target-1]) continue;
+			visited[target-1] = true;
+			int cost;
+
+			for (int i = 1; i <= n; i++) {
+				if (visited[i-1]) continue;
+				cost = dist[target-1] + costGraph[target - 1][i - 1];
+				if (dist[i-1] < cost) continue;
+				if (cost < dist[i-1]) {
+					dist[i-1] = cost;
+					pq.add(new Node(i, cost));
+				}
+			}
+		}
+		return dist;
+	}
+
+	static class Node implements Comparable<Node>{
+		int target;
+		int cost;
+
+		public Node(int target, int cost) {
+			this.target = target;
+			this.cost = cost;
+		}
+
+		@Override
+		public int compareTo(Node n) {
+			return this.cost - n.cost;
+		}
 	}
 }
 
