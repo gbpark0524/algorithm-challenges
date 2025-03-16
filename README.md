@@ -36,6 +36,7 @@
 | [단어변환](https://school.programmers.co.kr/learn/courses/30/lessons/43163)      | BFS, 그래프 탐색     | [코드](./src/main/java/gbpark/programmers/level3/WordConversion.java)     |                              |                                                      |
 | [퍼즐 조각 채우기](https://school.programmers.co.kr/learn/courses/30/lessons/84021) | 완전탐색, 구현, 객체 지향 | [코드](./src/main/java/gbpark/programmers/level3/PuzzlePieceFilling.java) |                              | equals override 사용                                   |
 | [합승 택시 요금](https://school.programmers.co.kr/learn/courses/30/lessons/72413)  | 플로이드 워셜, 다익스트라  | [코드](./src/main/java/gbpark/programmers/level3/TaxiCostSharing.java)    | 2021 KAKAO BLIND RECRUITMENT | 다익스트라로 Comparable import 클래스 생성 후 pq로 풀이 시 효율성 매우 증가 |
+| [양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92343)     | DFS, 완전탐색       | [코드](./src/main/java/gbpark/programmers/level3/SheepAndWolf.java)       | 2022 KAKAO BLIND RECRUITMENT | 다음 방문 노드가 동적으로 변함                                    |
 
 ### Level 4
 
