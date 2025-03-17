@@ -4,6 +4,7 @@ import gbpark.common.ArrayConverter;
 import gbpark.common.TestUtil;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -44,31 +45,20 @@ public class TaxiCostSharing {
 	}
 
 	public int solution(int n, int s, int a, int b, int[][] fares) {
-		int[][] costGraph = new int[n][n];
+		List<Node>[] adList = new ArrayList[n];
 
 		for (int i = 0; i < n; i++) {
-			for (int j = 0; j < n; j++) {
-				if (i != j) costGraph[i][j] = 100_000 * 400;
-			}
+			adList[i] = new ArrayList<>();
 		}
 
 		for (int[] fare : fares) {
-			costGraph[fare[0] - 1][fare[1] - 1] = fare[2];
-			costGraph[fare[1] - 1][fare[0] - 1] = fare[2];
+			adList[fare[0] - 1].add(new Node(fare[1] - 1,fare[2]));
+			adList[fare[1] - 1].add(new Node(fare[0] - 1,fare[2]));
 		}
 
-//		플로이드 워셜	
-//		for (int k = 0; k < n; k++) {
-//			for (int i = 0; i < n; i++) {
-//				for (int j = 0; j < n; j++) {
-//					costGraph[i][j] = Math.min(costGraph[i][j], costGraph[i][k] + costGraph[k][j]);
-//				}
-//			}
-//		}
-
-		int[] sd = dijkstra(s, n, costGraph);
-		int[] ad = dijkstra(a, n, costGraph);
-		int[] bd = dijkstra(b, n, costGraph);
+		int[] sd = dijkstra(s, n, adList);
+		int[] ad = dijkstra(a, n, adList);
+		int[] bd = dijkstra(b, n, adList);
 
 		int ans = Integer.MAX_VALUE;
 		for (int i = 0; i < n; i++) {
@@ -79,33 +69,24 @@ public class TaxiCostSharing {
 		return ans;
 	}
 
-	private int[] dijkstra (int s, int n, int[][]costGraph) {
+	private int[] dijkstra (int s, int n, List<Node>[] adList) {
 		boolean[] visited = new boolean[n];
 		PriorityQueue<Node> pq = new PriorityQueue<>();
-		for (int i = 1; i <= n; i++) {
-			if (s==i)continue;
-			pq.add(new Node(i, costGraph[s - 1][i - 1]));
-		}
-
+		pq.add(new Node(s-1, 0));
 		int[] dist = new int[n];
-		System.arraycopy(costGraph[s - 1], 0, dist, 0, n);
-		visited[s-1] = true;
+		Arrays.fill(dist, Integer.MAX_VALUE);
+		dist[s-1] = 0;
 
 		while (!pq.isEmpty()) {
 			Node node = pq.poll();
 			int target = node.target;
-			if (visited[target-1]) continue;
-			visited[target-1] = true;
-			int cost;
+			if (visited[target]) continue;
+			visited[target] = true;
 
-			for (int i = 1; i <= n; i++) {
-				if (visited[i-1]) continue;
-				cost = dist[target-1] + costGraph[target - 1][i - 1];
-				if (dist[i-1] < cost) continue;
-				if (cost < dist[i-1]) {
-					dist[i-1] = cost;
-					pq.add(new Node(i, cost));
-				}
+			for (Node adNode : adList[target]) {
+				if (dist[adNode.target] < dist[target] + adNode.cost) continue;
+				dist[adNode.target] = dist[target] + adNode.cost;
+				pq.add(new Node(adNode.target, dist[adNode.target]));
 			}
 		}
 		return dist;
