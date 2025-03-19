@@ -1,6 +1,7 @@
 package gbpark.common;
 
 import java.util.Collection;
+import java.util.Objects;
 
 public class TestUtil {
     private static int testCount = 0;
@@ -53,7 +54,29 @@ public class TestUtil {
         if (expected == actual) return true;
         if (expected == null || actual == null) return false;
 
-        if (expected instanceof Collection<?> expectedCol && actual instanceof Collection<?> actualCol) {
+        if (expected instanceof int[][] expectedArr && actual instanceof int[][] actualArr) {
+			if (expectedArr.length != actualArr.length) return false;
+
+            for (int i = 0; i < expectedArr.length; i++) {
+                if (expectedArr[i].length != actualArr[i].length) return false;
+
+                for (int j = 0; j < expectedArr[i].length; j++) {
+                    if (expectedArr[i][j] != actualArr[i][j]) return false;
+                }
+            }
+            return true;
+        } else if (expected instanceof String[][] expectedArr && actual instanceof String[][] actualArr) {
+			if (expectedArr.length != actualArr.length) return false;
+
+            for (int i = 0; i < expectedArr.length; i++) {
+                if (expectedArr[i].length != actualArr[i].length) return false;
+
+                for (int j = 0; j < expectedArr[i].length; j++) {
+                    if (!Objects.equals(expectedArr[i][j], actualArr[i][j])) return false;
+                }
+            }
+            return true;
+        } else if (expected instanceof Collection<?> expectedCol && actual instanceof Collection<?> actualCol) {
             return expectedCol.size() == actualCol.size() && expectedCol.containsAll(actualCol);
         } else if (expected.getClass().isArray() && actual.getClass().isArray()) {
             int expectedLength = java.lang.reflect.Array.getLength(expected);
