@@ -9,7 +9,7 @@ class ArrayConverterTest {
     @Test
     void toStringArray() {
         // given
-        String input = "[a, b,c ,d]     ";
+        String input = "[\"a\", b,c ,d]     ";
 
         // when
         String[] result = ArrayConverter.toStringArray(input);
@@ -21,7 +21,7 @@ class ArrayConverterTest {
     @Test
     void toStringMatrix() {
         // given
-        String input = "[[a,b],[c,d]]       ";
+        String input = "[[\"a\",b],[c,d]]       ";
 
         // when
         String[][] result = ArrayConverter.toStringMatrix(input);

@@ -7,6 +7,7 @@ public class ArrayConverter {
     public static String[] toStringArray(String input) {
         input = input.trim();
         return input.replaceAll("[\\[\\]]", "")
+                .replaceAll("\"", "")
                 .split("\\s*,\\s*");
     }
 
@@ -14,7 +15,7 @@ public class ArrayConverter {
         String[] rows = getRows(input);
         String[][] result = new String[rows.length][];
         for (int i = 0; i < rows.length; i++) {
-            result[i] = rows[i].trim().split("\\s*,\\s*");
+            result[i] = rows[i].trim().replaceAll("\"", "").split("\\s*,\\s*");
         }
         return result;
     }
