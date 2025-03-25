@@ -38,6 +38,7 @@
 | [양과 늑대](https://school.programmers.co.kr/learn/courses/30/lessons/92343)     | DFS, 완전탐색               | [코드](./src/main/java/gbpark/programmers/level3/SheepAndWolf.java)       | 2022 KAKAO BLIND RECRUITMENT      | 다음 방문 노드가 동적으로 변함                                   |
 | [길 찾기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/42892)   | PQ, BST, Tree Traversal | [코드](./src/main/java/gbpark/programmers/level3/ShuttleBus.java)         | 2019 KAKAO BLIND RECRUITMENT      | 좌표로 이진트리 생성, 전위 순회/후위 순회                            |
 | [셔틀버스](https://school.programmers.co.kr/learn/courses/30/lessons/17678)      | PQ, 수학, 구현              | [코드](./src/main/java/gbpark/programmers/level3/PathFindingGame.java)    | 2018 KAKAO BLIND RECRUITMENT [1차] | 좌표로 이진트리 생성, 전위 순회/후위 순회                            |
+| [거스름돈](https://school.programmers.co.kr/learn/courses/30/lessons/12907)      | DP, 구현                  | [코드](./src/main/java/gbpark/programmers/level3/CoinChange.java)         |                                   |                                                     |
 
 ### Level 4
 
