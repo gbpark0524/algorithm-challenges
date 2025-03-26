@@ -1,10 +1,9 @@
 package gbpark.programmers.level3;
 
-import gbpark.common.ArrayConverter;
-import gbpark.common.TestUtil;
+import gbpark.common.CodingTest;
 
-import java.util.ArrayList;
-import java.util.List;
+import static gbpark.common.CodingTest.DataType.INT;
+import static gbpark.common.CodingTest.DataType.INT_ARRAY;
 
 public class CoinChange {
 	public int solution(int n, int[] money) {
@@ -22,24 +21,9 @@ public class CoinChange {
 	}
 
 	public static void main(String[] args) {
-		List<String> qStr = new ArrayList<>();
-		List<Integer> nList = new ArrayList<>();
-		List<int[]> moneyList = new ArrayList<>();
-		List<Integer> answers = new ArrayList<>();
-
-		qStr.add("5\t[1,2,5]\t4");
-
-		for (String s : qStr) {
-			String[] split = s.trim().split("\\t+");
-			nList.add(Integer.parseInt(split[0]));
-			moneyList.add(ArrayConverter.toIntArray(split[1]));
-			answers.add(Integer.parseInt(split[2]));
-		}
-
-		for (int i = 0; i < answers.size(); i++) {
-			TestUtil.startTimer();
-			TestUtil.test(answers.get(i), new CoinChange().solution(nList.get(i), moneyList.get(i)));
-		}
+		CoinChange cc = new CoinChange();
+		CodingTest<Integer, int[], Object, Object, Integer> ct = new CodingTest<>(cc::solution, INT, INT_ARRAY, INT);
+		ct.codingTest("5\t[1,2,5]\t4");
 	}
 }
 
