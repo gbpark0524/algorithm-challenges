@@ -8,6 +8,8 @@
     * [Level 4](#level-4)
   * [🛠 공통 유틸리티](#-공통-유틸리티)
     * [🏭️ Array Converter](#-array-converter)
+    * [🧪 CodingTest - 코테 문제를 위한 클래스](#-codingtest---코테-문제를-위한-클래스)
+      * [사용 예시](#사용-예시)
 <!-- TOC -->
 
 ## 📚 문제
@@ -63,5 +65,29 @@
 | `toCharMatrix`   | 2차원 문자 배열 형태의 문자열을 char[][] 배열로 변환합니다.                                                            |
 | `toIntArray`     | "[1, 2, 3, 4]" 형태의 문자열을 int[] 배열로 변환합니다.                                                          |
 | `toIntMatrix`    | "[[1, 2], [3, 4]]" 형태의 2차원 정수 배열 문자열을 int[][] 배열로 변환합니다.                                          | |
+
+### 🧪 CodingTest - 코테 문제를 위한 클래스
+스트링 으로 주어진 문제 반복 붙여넣기 해결을 위해 생성 
+
+| 생성자/메서드               | 설명                                                                         |
+|-----------------------|----------------------------------------------------------------------------|
+| `CodingTest`          | 함수형 인터페이스와 파라미터 타입을 사용하여 주어진 문제 스트링을 변환할 방법 설정                             |
+| `CodingTest.DataType` | 코테에서 사용되는 입력 및 출력 값의 타입을 지정하는 enum (`INT`, `INT_ARRAY`, `STRING_MATRIX` 등) |
+| `codingTest(String)`  | 생성자로 정해진 인자타입을 적용해서 매개변수로 넘어간 메소드 실행 후, TestUtil.test 실행                   |
+
+#### 사용 예시
+
+```java
+import static gbpark.common.CodingTest.DataType.*;
+public class CoinChangeExample {
+  public static void main(String[] args) {
+    CoinChange coinChange = new CoinChange();
+    CodingTest<Integer, int[], Object, Object, Integer> codingTest
+            = new CodingTest<>(coinChange::solution, INT, INT_ARRAY, INT);
+    codingTest.codingTest("5\t[1,2,5]\t4");
+    codingTest.codingTest("10\t[1,2,5]\t10");
+  }
+}
+```
 
 [⬆️Top](#-algorithm-study)
