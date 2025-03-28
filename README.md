@@ -41,6 +41,7 @@
 | [길 찾기 게임](https://school.programmers.co.kr/learn/courses/30/lessons/42892)   | PQ, BST, Tree Traversal | [코드](./src/main/java/gbpark/programmers/level3/ShuttleBus.java)         | 2019 KAKAO BLIND RECRUITMENT      | 좌표로 이진트리 생성, 전위 순회/후위 순회                            |
 | [셔틀버스](https://school.programmers.co.kr/learn/courses/30/lessons/17678)      | PQ, 수학, 구현              | [코드](./src/main/java/gbpark/programmers/level3/PathFindingGame.java)    | 2018 KAKAO BLIND RECRUITMENT [1차] | 좌표로 이진트리 생성, 전위 순회/후위 순회                            |
 | [거스름돈](https://school.programmers.co.kr/learn/courses/30/lessons/12907)      | DP, 구현                  | [코드](./src/main/java/gbpark/programmers/level3/CoinChange.java)         |                                   |                                                     |
+| [불량사용자](https://school.programmers.co.kr/learn/courses/30/lessons/64064)     | DFS, 백트래킹               | [코드](./src/main/java/gbpark/programmers/level3/BannedUserFilter.java)   | 2019 카카오 개발자 겨울 인턴십               | Trie를 이용하면 오히려 복잡해짐.                                |
 
 ### Level 4
 
