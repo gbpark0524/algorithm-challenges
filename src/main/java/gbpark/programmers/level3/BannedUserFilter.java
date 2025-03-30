@@ -50,7 +50,7 @@ public class BannedUserFilter {
 
 	public static void main(String[] args) {
 		BannedUserFilter thisClass = new BannedUserFilter();
-		CodingTest<String[], String[], Object, Object, Integer> test = new CodingTest<>(thisClass::solution, STRING_ARRAY, STRING_ARRAY, INT);
+		CodingTest<String[], String[], Object, Object, Integer, Object, Object> test = new CodingTest<>(thisClass::solution, STRING_ARRAY, STRING_ARRAY, INT);
 		test.codingTest("[\"frodo\", \"fradi\", \"crodo\", \"abc123\", \"frodoc\"]\t[\"fr*d*\", \"abc1**\"]\t2");
 		test.codingTest("[\"frodo\", \"fradi\", \"crodo\", \"abc123\", \"frodoc\"]\t[\"*rodo\", \"*rodo\", \"******\"]\t2");
 		test.codingTest("[\"frodo\", \"fradi\", \"crodo\", \"abc123\", \"frodoc\"]\t[\"fr*d*\", \"*rodo\", \"******\", \"******\"]\t3");

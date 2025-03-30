@@ -6,7 +6,7 @@ import java.util.function.Function;
 import static gbpark.common.TestUtil.startTimer;
 import static gbpark.common.TestUtil.test;
 
-public class CodingTest<T1, T2, T3, T4, R> {
+public class CodingTest<T1, T2, T3, T4, T5, T6, R> {
 	public enum DataType {
 		INT, LONG, STRING,
 		INT_ARRAY, STRING_ARRAY, CHAR_ARRAY,
@@ -17,6 +17,8 @@ public class CodingTest<T1, T2, T3, T4, R> {
 	private BiFunction<T1, T2, R> function2;
 	private TriFunction<T1, T2, T3, R> function3;
 	private QuadFunction<T1, T2, T3, T4, R> function4;
+	private PentaFunction<T1, T2, T3, T4, T5, R> function5;
+	private HexaFunction<T1, T2, T3, T4, T5, T6, R> function6;
 
 	private final DataType[] paramTypes;
 	private final int paramCount;
@@ -45,6 +47,18 @@ public class CodingTest<T1, T2, T3, T4, R> {
 		this.paramCount = 4;
 	}
 
+	public CodingTest(PentaFunction<T1, T2, T3, T4, T5, R> function, DataType input1Type, DataType input2Type, DataType input3Type, DataType input4Type, DataType input5Type, DataType expectedType) {
+		this.function5 = function;
+		this.paramTypes = new DataType[]{input1Type, input2Type, input3Type, input4Type, input5Type, expectedType};
+		this.paramCount = 5;
+	}
+
+	public CodingTest(HexaFunction<T1, T2, T3, T4, T5, T6, R> function, DataType input1Type, DataType input2Type, DataType input3Type, DataType input4Type, DataType input5Type, DataType input6Type, DataType expectedType) {
+		this.function6 = function;
+		this.paramTypes = new DataType[]{input1Type, input2Type, input3Type, input4Type, input5Type, input6Type, expectedType};
+		this.paramCount = 6;
+	}
+
 	public void codingTest(String testCase) {
 		String[] parts = testCase.trim().split("\\s*\\t+\\s*");
 		if (parts.length != paramCount + 1) {
@@ -65,6 +79,9 @@ public class CodingTest<T1, T2, T3, T4, R> {
 			case 2 -> function2.apply((T1) inputs[0], (T2) inputs[1]);
 			case 3 -> function3.apply((T1) inputs[0], (T2) inputs[1], (T3) inputs[2]);
 			case 4 -> function4.apply((T1) inputs[0], (T2) inputs[1], (T3) inputs[2], (T4) inputs[3]);
+			case 5 -> function5.apply((T1) inputs[0], (T2) inputs[1], (T3) inputs[2], (T4) inputs[3], (T5) inputs[4]);
+			case 6 ->
+					function6.apply((T1) inputs[0], (T2) inputs[1], (T3) inputs[2], (T4) inputs[3], (T5) inputs[4], (T6) inputs[5]);
 			default -> null;
 		};
 
@@ -93,5 +110,15 @@ public class CodingTest<T1, T2, T3, T4, R> {
 	@FunctionalInterface
 	public interface QuadFunction<T1, T2, T3, T4, R> {
 		R apply(T1 t1, T2 t2, T3 t3, T4 t4);
+	}
+
+	@FunctionalInterface
+	public interface PentaFunction<T1, T2, T3, T4, T5, R> {
+		R apply(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5);
+	}
+
+	@FunctionalInterface
+	public interface HexaFunction<T1, T2, T3, T4, T5, T6, R> {
+		R apply(T1 t1, T2 t2, T3 t3, T4 t4, T5 t5, T6 t6);
 	}
 }
