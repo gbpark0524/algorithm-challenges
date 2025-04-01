@@ -22,7 +22,7 @@ public class CoinChange {
 
 	public static void main(String[] args) {
 		CoinChange cc = new CoinChange();
-		CodingTest<Integer, int[], Integer, Object, Object, Object, Object> ct = new CodingTest<>(cc::solution, INT, INT_ARRAY, INT);
+		CodingTest ct = new CodingTest<>(cc::solution, INT, INT_ARRAY, INT);
 		ct.codingTest("5\t[1,2,5]\t4");
 	}
 }

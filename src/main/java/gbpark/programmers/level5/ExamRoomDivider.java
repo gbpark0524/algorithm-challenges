@@ -100,7 +100,7 @@ public class ExamRoomDivider {
 
 	public static void main(String[] args) {
 		ExamRoomDivider thisClass = new ExamRoomDivider();
-		CodingTest<Integer, int[], int[][], Object, Object, Object, Integer> test = new CodingTest<>(thisClass::solution, INT, INT_ARRAY, INT_MATRIX, INT);
+		CodingTest test = new CodingTest<>(thisClass::solution, INT, INT_ARRAY, INT_MATRIX, INT);
 		test.codingTest("3	[12, 30, 1, 8, 8, 6, 20, 7, 5, 10, 4, 1]	[[-1, -1], [-1, -1], [-1, -1], [-1, -1], [8, 5], [2, 10], [3, 0], [6, 1], [11, -1], [7, 4], [-1, -1], [-1, -1]]	40");
 		test.codingTest("1	[6, 9, 7, 5]	[[-1, -1], [-1, -1], [-1, 0], [2, 1]]	27");
 		test.codingTest("2	[6, 9, 7, 5]	[[-1, -1], [-1, -1], [-1, 0], [2, 1]]	14");

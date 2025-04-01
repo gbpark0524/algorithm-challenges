@@ -93,8 +93,7 @@ import static gbpark.common.CodingTest.DataType.*;
 public class CoinChangeExample {
 	public static void main(String[] args) {
 		CoinChange coinChange = new CoinChange();
-		CodingTest<Integer, int[], Object, Object, Integer> codingTest
-				= new CodingTest<>(coinChange::solution, INT, INT_ARRAY, INT);
+		CodingTest codingTest = new CodingTest<>(coinChange::solution, INT, INT_ARRAY, INT);
 		codingTest.codingTest("5\t[1,2,5]\t4");
 		codingTest.codingTest("10\t[1,2,5]\t10");
 	}

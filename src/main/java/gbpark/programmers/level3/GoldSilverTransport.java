@@ -42,7 +42,7 @@ public class GoldSilverTransport {
 
 	public static void main(String[] args) {
 		GoldSilverTransport thisClass = new GoldSilverTransport();
-		CodingTest<Integer, Integer, int[], int[], int[], int[], Long> test = new CodingTest<>(thisClass::solution, INT, INT, INT_ARRAY, INT_ARRAY, INT_ARRAY, INT_ARRAY, LONG);
+		CodingTest test = new CodingTest<>(thisClass::solution, INT, INT, INT_ARRAY, INT_ARRAY, INT_ARRAY, INT_ARRAY, LONG);
 		test.codingTest("10\t10\t[100]\t[100]\t[7]\t[10]\t50");
 		test.codingTest("90\t500\t[70,70,0]\t[0,0,500]\t[100,100,2]\t[4,8,1]\t499");
 	}
