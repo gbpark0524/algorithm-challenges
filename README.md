@@ -52,6 +52,12 @@
 | [자동완성](https://school.programmers.co.kr/learn/courses/30/lessons/17685)         | PQ, Greedy | [코드](./src/main/java/gbpark/programmers/level4/Autocomplete.java)             | 2018 KAKAO BLIND RECRUITMENT [3차] | PQ로 사전식 정렬 후 접두사 비교.                                                                       |
 | [자동완성 by Trie](https://school.programmers.co.kr/learn/courses/30/lessons/17685) | Trie       | [코드](./src/main/java/gbpark/programmers/level4/AutocompleteTrie.java)         | 2018 KAKAO BLIND RECRUITMENT [3차] | 검색, 자동완성 등에 사용되는 Trie 구조 사용                                                                |
 
+### Level 5
+
+| 문제                                                                         | 핵심 개념      | 풀이 코드                                                                         | 기출                                | 코멘트                                                                                        |
+|----------------------------------------------------------------------------|------------|-------------------------------------------------------------------------------|-----------------------------------|--------------------------------------------------------------------------------------------|
+| [시험장 나누기]<br/>(https://school.programmers.co.kr/learn/courses/30/lessons/72416) | DP, DFS    | [코드](./src/main/java/gbpark/programmers/level4/MinimizingRevenueDecline.java) | 2021 KAKAO BLIND RECRUITMENT      | DFS 로 leafNode 탐색, leafNode 부터 root 까지 DP. DFS 로 노드 돌아오는 과정에 DP를 하는 과정이 비슷한 문제가 나올 여지가 많음. |
+
 ## 🛠 공통 유틸리티
 
 - [TestUtil](./src/main/java/gbpark/common/TestUtil.java): 테스트 케이스 실행 및 결과 검증
