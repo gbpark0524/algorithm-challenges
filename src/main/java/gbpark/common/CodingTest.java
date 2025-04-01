@@ -60,7 +60,7 @@ public class CodingTest<T1, T2, T3, T4, T5, T6, R> {
 	}
 
 	public void codingTest(String testCase) {
-		String[] parts = testCase.trim().split("\\s*\\t+\\s*");
+		String[] parts = testCase.trim().replaceAll("\\n", "").split("\\s*\\t+\\s*");
 		if (parts.length != paramCount + 1) {
 			throw new IllegalArgumentException("테스트 케이스 형식이 잘못되었습니다. 입력값과 기대값의 개수를 확인하세요.");
 		}
