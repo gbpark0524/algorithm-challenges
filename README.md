@@ -54,6 +54,7 @@
 | [자동완성](https://school.programmers.co.kr/learn/courses/30/lessons/17685)         | PQ, Greedy      | [💻](./src/main/java/gbpark/programmers/level4/Autocomplete.java)             | 2018 KAKAO BLIND RECRUITMENT [3차] | PQ로 사전식 정렬 후 접두사 비교.                                                                       |
 | [자동완성 by Trie](https://school.programmers.co.kr/learn/courses/30/lessons/17685) | Trie            | [💻](./src/main/java/gbpark/programmers/level4/AutocompleteTrie.java)         | 2018 KAKAO BLIND RECRUITMENT [3차] | 검색, 자동완성 등에 사용되는 Trie 구조 사용                                                                |
 | [지형이동](https://school.programmers.co.kr/learn/courses/30/lessons/62050)         | BFS, Greedy, PQ | [💻](./src/main/java/gbpark/programmers/level4/TerrainMovement.java)          | Summer/Winter Coding(2019)        | BFS로 Union을 찾으며, 프림(Prim) 알고리즘과 같은 원리로 Greedy 하게 인접 Union과의 최소 경로를 연결하여 해결함.               |
+| [4단 고음](https://school.programmers.co.kr/learn/courses/30/lessons/1831)         | DFS, 백트래킹, 구현   | [💻](./src/main/java/gbpark/programmers/level4/HighPitchedVoice.java)         | 2017 카카오코드 예선                     | 'x개수' * 2 < '+개수' 조건이 핵심                                                                   |
 
 ### Level 5
 
