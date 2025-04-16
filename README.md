@@ -47,6 +47,7 @@
 | [추석 트래픽](https://school.programmers.co.kr/learn/courses/30/lessons/17676)    | PQ, Greedy, Sliding Window | [💻](./src/main/java/gbpark/programmers/level3/HolidayTrafficAnalyzer.java)    | 2018 KAKAO BLIND RECRUITMENT[1차]  | 최대값이므로 시작 시간만 greedy 하게 고려하면 됨. 1.001s, 2.000s 일때 카운팅 하지 않는 점 주의 |
 | [풍선 터뜨리기](https://school.programmers.co.kr/learn/courses/30/lessons/68646)   | PQ, Greedy                 | [💻](./src/main/java/gbpark/programmers/level3/BalloonPopping.java)            | 월간 코드 챌린지 시즌1                     | 좌측은 포인터를 갱신하며 최소값, 우측은 PQ로 최소값과 비교하며 최소값 풍선만 greedy 하게 계산        |
 | [최적의 행렬 곱셈](https://school.programmers.co.kr/learn/courses/30/lessons/12942) | PQ, Greedy                 | [💻](./src/main/java/gbpark/programmers/level3/MatrixChainMultiplication.java) |                                   | 행렬 연쇄 곱셈(Matrix Chain Multiplication) 연산량 계산                     |
+| [야근 지수](https://school.programmers.co.kr/learn/courses/30/lessons/12927)     | PQ, Greedy                 | [💻](./src/main/java/gbpark/programmers/level3/OvertimeScore.java)             |                                   | 제곱수 들의 성질을 알고있다면 너무 쉬움                                           |
 
 ### Level 4
 
