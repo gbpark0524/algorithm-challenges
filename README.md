@@ -49,6 +49,7 @@
 | [최적의 행렬 곱셈](https://school.programmers.co.kr/learn/courses/30/lessons/12942) | PQ, Greedy                 | [💻](./src/main/java/gbpark/programmers/level3/MatrixChainMultiplication.java) |                                   | 행렬 연쇄 곱셈(Matrix Chain Multiplication) 연산량 계산                     |
 | [야근 지수](https://school.programmers.co.kr/learn/courses/30/lessons/12927)     | PQ, Greedy                 | [💻](./src/main/java/gbpark/programmers/level3/OvertimeScore.java)             |                                   | 제곱수 들의 성질을 알고있다면 너무 쉬움                                           |
 | [사라지는 발판](https://school.programmers.co.kr/learn/courses/30/lessons/92345)   | DFS, 백트래킹, MinMax          | [💻](./src/main/java/gbpark/programmers/level3/VanishingFoothold.java)         | 2022 KAKAO BLIND RECRUITMENT      | Minimax 알고리즘의 alpha-beta 이용 백트래킹                                 |
+| [다단계 칫솔 판매](https://school.programmers.co.kr/learn/courses/30/lessons/77486) | Tree Traversal, 구현         | [💻](./src/main/java/gbpark/programmers/level3/ToothbrushMLM.java)             | 2021 Dev-Matching:웹 백엔드 개발자(상반기)  | 체감 난이도 2                                                         |
 
 ### Level 4
 
