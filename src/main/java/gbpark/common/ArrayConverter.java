@@ -65,6 +65,19 @@ public class ArrayConverter {
         return result;
     }
 
+    public static long[] toLongArray(String input) {
+        input = input.trim();
+        String[] numbers = input.replaceAll("[\\[\\]]", "")
+                .trim()
+                .split("\\s*,\\s*");
+
+        long[] result = new long[numbers.length];
+        for (int i = 0; i < numbers.length; i++) {
+            result[i] = Long.parseLong(numbers[i].trim());
+        }
+        return result;
+    }
+
     private static String[] getRows(String input) {
         input = input.trim();
         String content = input.trim().substring(1, input.length() - 1);

@@ -10,7 +10,8 @@ public class CodingTest<T1, T2, T3, T4, T5, T6, R> {
 	public enum DataType {
 		INT, LONG, STRING,
 		INT_ARRAY, STRING_ARRAY, CHAR_ARRAY,
-		INT_MATRIX, STRING_MATRIX, CHAR_MATRIX
+		INT_MATRIX, STRING_MATRIX, CHAR_MATRIX,
+		LONG_ARRAY
 	}
 
 	private Function<T1, R> function1;
@@ -99,6 +100,7 @@ public class CodingTest<T1, T2, T3, T4, T5, T6, R> {
 			case INT_MATRIX -> ArrayConverter.toIntMatrix(value);
 			case STRING_MATRIX -> ArrayConverter.toStringMatrix(value);
 			case CHAR_MATRIX -> ArrayConverter.toCharMatrix(value);
+			case LONG_ARRAY -> ArrayConverter.toLongArray(value);
 		};
 	}
 
