@@ -52,6 +52,7 @@
 | [다단계 칫솔 판매](https://school.programmers.co.kr/learn/courses/30/lessons/77486)    | Tree Traversal, 구현          | [💻](./src/main/java/gbpark/programmers/level3/ToothbrushMLM.java)             | 2021 Dev-Matching:웹 백엔드 개발자(상반기)  | 체감 난이도 2                                                         |
 | [표현 가능한 이진트리](https://school.programmers.co.kr/learn/courses/30/lessons/150367) | DFS, Tree Traversal, Binary | [💻](./src/main/java/gbpark/programmers/level3/ExpressableBinaryTree.java)     | 2023 KAKAO BLIND RECRUITMENT      | 중위순회로 트리에 2진수 반영, 전위 순회로 트리 검증                                   |
 | [보석 쇼핑](https://school.programmers.co.kr/learn/courses/30/lessons/67258)        | Two Pointers                | [💻](./src/main/java/gbpark/programmers/level3/JewelryShopping.java)           | 2020 카카오 인턴쉽                      | 가변적으로 구간의 길이를 변화하며 O(n) 탐색                                       |
+| [숫자 게임](https://school.programmers.co.kr/learn/courses/30/lessons/12987)        | 정렬, Greedy                  | [💻](./src/main/java/gbpark/programmers/level3/NumberGame.java)                | Summer/Winter Coding(~2018)       | 최대 승수 전략                                                         |
 
 ### Level 4
 
