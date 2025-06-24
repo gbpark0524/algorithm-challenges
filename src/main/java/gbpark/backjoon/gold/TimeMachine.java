@@ -1,16 +1,11 @@
-package gbpark.backjoon;
+package gbpark.backjoon.gold;
 
 
 import gbpark.common.CodingTest;
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.Queue;
-import java.util.Scanner;
-import java.util.StringTokenizer;
 
 import static gbpark.common.CodingTest.DataType.INT;
 import static gbpark.common.CodingTest.DataType.INT_MATRIX;
